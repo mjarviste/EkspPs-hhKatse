@@ -1,0 +1,55 @@
+:root, body {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-family: 'Times New Roman', Times, serif;
+
+  #textContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn{
+    display: none;
+    padding: 20px 30px;
+    font-size: 16px;
+    background-color: rgb(22, 22, 147);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    &.active {
+      display: block;
+
+      &:hover {
+        background-color: rgb(105, 105, 247);
+      }
+    }
+  }
+  .state1 {
+    background: white;
+    font-size: 12px;
+  }
+  .state2 {
+    background: #FFFFE4;
+    font-size: 12px;
+  }
+  .state3 {
+    background: white;
+    font-size: 18px;
+  }
+  .state4 {
+    background: #FFFFE4;
+    font-size: 18px;
+  }
+
+}
