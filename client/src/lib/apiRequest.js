@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiRequest = axios.create({
-    baseURL: "api/start-test",
+    baseURL: "eksp-psyhh-katse-backend.vercel.app/start-test",
     withCredentials: true,
 })
 

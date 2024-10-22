@@ -9,7 +9,7 @@ dotenv.config()
 const app = express();
 app.use(cors({origin: 'https://eksp-psyhh-katse-frontend.vercel.app/', credentials: true}))
 
-const mongoUri = process.env.MONGODB_URI
+const mongoUri = process.env.MONGODB_URL
 
 // Cache the database connection
 let cachedDb = null;
