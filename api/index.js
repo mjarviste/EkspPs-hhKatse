@@ -106,7 +106,7 @@ import mongoose from 'mongoose'
 dotenv.config()
 const app = express();
 const port = 8800;
-app.use(cors({origin: process.env.CLIENT_URL, credentials: true}))
+app.use(cors({origin: 'https://eksp-psyhh-katse-frontend.vercel.app/', credentials: true}))
 
 // Connect to MongoDB
 mongoose.connect(process.env.DATABASE_URL, {
