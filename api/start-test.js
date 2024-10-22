@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 // MongoDB connection URI from environment variables
 dotenv.config();
 
-const mongoUri = process.env.MONGODB_URL;
+const mongoUri = process.env.DATABASE_URL;
 
 let cachedDb = null;
 
