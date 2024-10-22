@@ -1,17 +1,11 @@
-import dotenv from 'dotenv'
-import express from 'express'
-import cors from "cors";
-import mongoose from 'mongoose'
-
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
 // MongoDB connection URI from environment variables
-dotenv.config()
-const app = express();
-app.use(cors({origin: 'https://eksp-psyhh-katse-frontend.vercel.app/', credentials: true}))
+dotenv.config();
 
-const mongoUri = process.env.MONGODB_URL
+const mongoUri = process.env.MONGODB_URL;
 
-// Cache the database connection
 let cachedDb = null;
 
 async function connectToDatabase() {
@@ -26,7 +20,7 @@ async function connectToDatabase() {
   return cachedDb;
 }
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   try {
     const db = await connectToDatabase();
 
@@ -35,17 +29,16 @@ module.exports = async (req, res) => {
 
     const result = await StarterId.findOneAndUpdate(
       {}, // filter
-      { $inc: { content: 1 } }, // increment contentIndex
-      { new: true, upsert: true } // return updated document or insert if not found
+      { $inc: { content: 1 } }, // increment content
+      { new: true, upsert: true } // options: return updated doc or insert if not found
     );
 
     res.status(200).json(result);
   } catch (error) {
-    console.error('Error updating contentIndex:', error);
+    console.error('Error updating content:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
-};
-
+}
 
 
 
