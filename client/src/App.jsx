@@ -10,18 +10,11 @@ function App() {
     "Tekst 4",
   ]
 
-  const styles = [
-    "state1",
-    "state2",
-    "state3",
-    "state4",
-  ]
     
 
   const [isShowing, setIsShowing] = useState(false)
   const [index, setIndex] = useState(null)
   const [startIndex, setStartIndex] = useState(null)
-  const [factors, setFactors] = useState(null);
 
   const getStarterId = async () => {
     try {
